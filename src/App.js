@@ -8,10 +8,10 @@ const App = () => {
     const {isLoginPending, error, token} = useSelector((state) => state.user)
 
     const handleClick = () => {
-        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1,}})
-        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1,}})
-        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1,}})
-        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1,}})
+        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1, actionId:1}})
+        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1, actionId:2}})
+        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1, actionId:3}})
+        dispatch({type: USER_POST_FETCH_REQUESTED, payload: {userId: 1, actionId:4}})
     }
 
     const handleLoginClick = () => {

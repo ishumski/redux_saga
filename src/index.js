@@ -9,6 +9,7 @@ import {rootSaga} from "./store/sagas/sagas_main";
 import {userPostFetchRequestedWatcherSaga} from "./store/sagas/sagas_with_action_channel";
 import {loginFlowSagaWatcher} from "./store/sagas/sagas_login_flow";
 import {forkSpawnSagaWatcher} from "./store/sagas/sagas_fork_spawn";
+import {takePatternSaga} from "./store/sagas/sagas_take_pattern";
 
 
 const sagaMiddleware = createSagaMiddleware()
@@ -33,7 +34,11 @@ const store = createStore(
 // sagaMiddleware.run(loginFlowSagaWatcher)
 
 // get users posts/albums
-sagaMiddleware.run(forkSpawnSagaWatcher)
+// sagaMiddleware.run(forkSpawnSagaWatcher)
+
+// 'take' pattern saga
+sagaMiddleware.run(takePatternSaga)
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
