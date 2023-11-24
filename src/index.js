@@ -7,6 +7,7 @@ import {rootReducer} from "./store/reducers/rootReducer";
 import createSagaMiddleware from 'redux-saga'
 import {rootSaga} from "./store/sagas/sagas_main";
 import {userPostFetchRequestedWatcherSaga} from "./store/sagas/sagas_with_action_channel";
+import {loginFlowSagaWatcher} from "./store/sagas/sagas_login_flow";
 
 
 const sagaMiddleware = createSagaMiddleware()
@@ -20,8 +21,13 @@ const store = createStore(
 )
 
 //SAGAS RUN
+
+//fetch users posts saga
 // sagaMiddleware.run(rootSaga)
-sagaMiddleware.run(userPostFetchRequestedWatcherSaga)
+//fetch users posts saga with channel
+// sagaMiddleware.run(userPostFetchRequestedWatcherSaga)
+// login flow saga
+sagaMiddleware.run(loginFlowSagaWatcher)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
